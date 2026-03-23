@@ -10,7 +10,12 @@ use Illuminate\Http\Request;
 class CharacterManagementController extends Controller
 {
     public function index(){
-        return view('admin.management');
+        $characters = CharacterInfoModel::all();
+        return view('admin.management', compact('characters'));
+    }
+    public function show($id){
+        $char = CharacterInfoModel::find($id);
+        return view('admin.profile', compact('char'));
     }
     public function store(CharacterInfoRequest $request){
         try {

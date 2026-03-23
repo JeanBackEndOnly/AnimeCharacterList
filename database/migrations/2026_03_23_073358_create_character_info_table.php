@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('character_info_db', function (Blueprint $table) {
+        Schema::create('character_info', function (Blueprint $table) {
             $table->id();
             $table->string('anime');
             $table->string('name');
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('character_info_db');
+        Schema::dropIfExists('character_info');
     }
 };
